@@ -16,7 +16,7 @@ public:
 	// Ignore this for now
 private:
 	int MyCurrentTry;
-	int MyMaxTries;
+	int MyMaxTries = 5;
 	bool IsISogram(std::string);
 
 };

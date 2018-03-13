@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "FGuessTheWord.h"
 
 //using namespace std;
 
@@ -8,6 +9,7 @@ void PlayGame();
 std::string GetGuess();
 bool AskToPlayAgain();
 
+FGuessTheWord GWGame; // instantiate a new game
 
 // the entry point for our application
 int main()
@@ -40,9 +42,13 @@ void PrintIntro()
 
 void PlayGame()
 {
+	
+
+	int MaxTries = GWGame.GetMaxTries();
+	std::cout << MaxTries << std::endl;
+
 	// loop for the number of turns asking for guesses
-	constexpr int NUMBER_OF_TURNS = 5;
-	for (int count = 1; count <= NUMBER_OF_TURNS; count++)
+	for (int count = 1; count <= MaxTries; count++)
 	{
 		std::string Guess = GetGuess();
 		std::cout << "You have entered: " << Guess << std::endl;
@@ -55,6 +61,8 @@ void PlayGame()
 std::string GetGuess()
 {	
 	
+	int CTry = GWGame.GetCurrentTry();
+	std::cout << "Try " << CTry << ": ";
 	// get a guess from the player
 	std::cout << "Your guess is: ";
 	std::string Guess = "";
