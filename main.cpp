@@ -2,7 +2,6 @@
 #include <string>
 #include "FGuessTheWord.h"
 
-//using namespace std;
 
 void PrintIntro();
 void PlayGame();
@@ -43,28 +42,32 @@ void PrintIntro()
 void PlayGame()
 {
 	
-
+	GWGame.Reset();
 	int MaxTries = GWGame.GetMaxTries();
-	std::cout << MaxTries << std::endl;
-
+	
 	// loop for the number of turns asking for guesses
+	// TODO change from FOR to WHILE loop once we are validating tries
 	for (int count = 1; count <= MaxTries; count++)
 	{
-		std::string Guess = GetGuess();
+		std::string Guess = GetGuess(); // TODO make loop checking valid guess
+
+		// Submit valid guess to the game
+		// Pring number of correct letters and incorrect placed letters
 		std::cout << "You have entered: " << Guess << std::endl;
 		std::cout << std::endl;
 
 	}
+
+	// TODO add game summary
 	
 }
 
 std::string GetGuess()
 {	
 	
-	int CTry = GWGame.GetCurrentTry();
-	std::cout << "Try " << CTry << ": ";
+	int CurrentTry = GWGame.GetCurrentTry();
 	// get a guess from the player
-	std::cout << "Your guess is: ";
+	std::cout << "Try " << CurrentTry << " Your guess is: ";
 	std::string Guess = "";
 	std::getline(std::cin, Guess);	
 	return Guess;

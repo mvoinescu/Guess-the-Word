@@ -1,21 +1,23 @@
 #include "FGuessTheWord.h"
 
+
+
+FGuessTheWord::FGuessTheWord() { Reset(); }
+
+int FGuessTheWord::GetMaxTries() const { return MyMaxTries; }
+int FGuessTheWord::GetCurrentTry() const { return MyCurrentTry; }
+
+
 void FGuessTheWord::Reset()
 {
-	return;
+	constexpr int MAX_TRIES = 8;
+	MyCurrentTry = 1;
+	MyMaxTries = MAX_TRIES;
+
 }
 
-int FGuessTheWord::GetMaxTries()
-{
-	return MyMaxTries;
-}
 
-int FGuessTheWord::GetCurrentTry()
-{
-	return 1;
-}
-
-bool FGuessTheWord::IsGameWon()
+bool FGuessTheWord::IsGameWon() const
 {
 	return false;
 }
