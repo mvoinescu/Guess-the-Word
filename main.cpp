@@ -52,7 +52,7 @@ void PlayGame()
 		std::string Guess = GetGuess(); // TODO make loop checking valid guess
 
 		// Submit valid guess to the game
-		// Pring number of correct letters and incorrect placed letters
+		// Print number of correct letters and incorrect placed letters
 		std::cout << "You have entered: " << Guess << std::endl;
 		std::cout << std::endl;
 

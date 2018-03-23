@@ -2,7 +2,11 @@
 
 
 
-FGuessTheWord::FGuessTheWord() { Reset(); }
+FGuessTheWord::FGuessTheWord()
+{
+	Reset();
+
+}
 
 int FGuessTheWord::GetMaxTries() const { return MyMaxTries; }
 int FGuessTheWord::GetCurrentTry() const { return MyCurrentTry; }
@@ -27,7 +31,4 @@ bool FGuessTheWord::CheckGuessValidity(std::string)
 	return false;
 }
 
-bool FGuessTheWord::IsISogram(std::string)
-{
-	return false;
-}
+// bool FGuessTheWord::IsISogram(std::string){	return false; }
