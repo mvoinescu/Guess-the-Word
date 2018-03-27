@@ -5,7 +5,9 @@
 using FString = std::string;
 using int32 = int;
 
-struct GuessTheWordCount
+
+// all values initialied to 0
+struct FGuessTheWordCount
 {
 	int32 CorrectPlacedLetter = 0;
 	int32 WrongPlacedLetter = 0;
@@ -18,20 +20,26 @@ public:
 
 	int32 GetMaxTries() const;
 	int32 GetCurrentTry() const;
+	int32 GetHiddenWordLenght() const;
+
 	bool IsGameWon() const;
+	bool CheckGuessValidity(FString) const; // TODO make a more rich return value.
+
 
 	void Reset(); // TODO make a more rich return value.
-	bool CheckGuessValidity(FString); // TODO make a more rich return value.
+	
 	
 	// Counts correct placed letters and wrong placed letters, and increases try #
-	GuessTheWordCount SubmitGuess(FString);
+	FGuessTheWordCount SubmitGuess(FString);
 	
 
 
 	// Ignore this for now
 private:
 	int32 MyCurrentTry;
-	int32 MyMaxTries = 5;
+	int32 MyMaxTries;
 	// bool IsISogram(FString);
+
+	FString MyHiddenWord;
 
 };

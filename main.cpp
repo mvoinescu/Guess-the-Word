@@ -42,9 +42,9 @@ int main()
 void PrintIntro()
 {
 	
-	constexpr int32 WORD_LENGHT = 9;
+	
 	std::cout << "Welcome to Guess the Word, a fun word game.\n";
-	std::cout << "Can you guess the " << WORD_LENGHT;
+	std::cout << "Can you guess the " << GWGame.GetHiddenWordLenght();
 	std::cout << " letter isogram I'm thinking of?\n";
 	std::cout << std::endl;
 	return;
@@ -62,9 +62,11 @@ void PlayGame()
 	{
 		FText Guess = GetGuess(); // TODO make loop checking valid guess
 
-		// Submit valid guess to the game
+		// Submit valid guess to the game, and receive counts
+		FGuessTheWordCount GuessTheWordGame = GWGame.SubmitGuess(Guess);
 		// Print number of correct letters and incorrect placed letters
-		std::cout << "You have entered: " << Guess << std::endl;
+		std::cout << "Correct entered letters: " << GuessTheWordGame.CorrectPlacedLetter << std::endl;
+		std::cout << "Wrong placed entered letters: " << GuessTheWordGame.WrongPlacedLetter << std::endl;
 		std::cout << std::endl;
 
 	}
