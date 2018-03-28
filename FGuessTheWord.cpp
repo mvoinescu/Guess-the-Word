@@ -33,9 +33,31 @@ bool FGuessTheWord::IsGameWon() const
 	return false;
 }
 
-bool FGuessTheWord::CheckGuessValidity(FString) const
+EGuessStatus FGuessTheWord::CheckGuessValidity(FString) const
 {
-	return false;
+	if (false) // if the guess is not an isogram, then return an error
+	{
+		return EGuessStatus::Not_Isogram;
+	}
+	else if (false) // if it's not all lowercase, return an error
+	{
+		
+		return EGuessStatus::Not_Lowercase;
+
+	}
+	else if (false) // if guess lenght, return an error
+	{
+
+		return EGuessStatus::Wrong_Lenght;
+
+	}
+	else // if not then return Ok
+	{
+		return EGuessStatus::OK;
+	}
+	
+	
+	
 }
 
 // received a Valid guess, increments turn. and returns count

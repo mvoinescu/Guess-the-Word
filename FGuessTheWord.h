@@ -13,6 +13,16 @@ struct FGuessTheWordCount
 	int32 WrongPlacedLetter = 0;
 };
 
+enum EGuessStatus
+{
+	OK,
+	Not_Isogram,
+	Wrong_Lenght,
+	Not_Lowercase,
+	Numbers
+
+};
+
 class FGuessTheWord
 {
 public:
@@ -23,7 +33,7 @@ public:
 	int32 GetHiddenWordLenght() const;
 
 	bool IsGameWon() const;
-	bool CheckGuessValidity(FString) const; // TODO make a more rich return value.
+	EGuessStatus CheckGuessValidity(FString) const; // TODO make a more rich return value.
 
 
 	void Reset(); // TODO make a more rich return value.
